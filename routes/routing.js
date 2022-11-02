@@ -5,7 +5,11 @@ const router=express.Router();
 
 
 // router.use(Logger);
-router.post('/note',notesHandler.addNote);
+router.post('/addnote',notesHandler.addNotes);
+router.get('/getnote',notesHandler.getNotes);
+router.get('/getnote/:id',notesHandler.getNote);
+router.put('/updatenote/:id',notesHandler.updateNote);
+router.delete('/deletenote/:id',notesHandler.deleteNote);
 
 //router lvl middleware
 const Logger=(req,res,next)=>{
